@@ -35,11 +35,12 @@
 <section style="padding-top:1rem">
   <div class="wrap contact-grid">
     <div class="reveal">
-      <form id="contactForm">
-        <div class="field"><label for="name">Name</label><input id="name" type="text" required placeholder="Your name"></div>
-        <div class="field"><label for="email">Email</label><input id="email" type="email" required placeholder="you@company.com"></div>
+      <form id="contactForm" action="https://formspree.io/f/xqeoaplg" method="POST">
+        <input type="hidden" name="_subject" value="New contact from MD Assist website">
+        <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" required placeholder="Your name"></div>
+        <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required placeholder="you@company.com"></div>
         <div class="field"><label for="service">What do you need help with?</label>
-          <select id="service">
+          <select id="service" name="help-topic">
             <option>Email management</option>
             <option>Calendar &amp; scheduling</option>
             <option>Travel planning</option>
@@ -49,7 +50,7 @@
             <option>Something else</option>
           </select>
         </div>
-        <div class="field"><label for="msg">Message</label><textarea id="msg" rows="5" placeholder="A few words about your business and what's on your plate..."></textarea></div>
+        <div class="field"><label for="msg">Message</label><textarea id="msg" name="message" rows="5" required placeholder="A few words about your business and what's on your plate..."></textarea></div>
         <button type="submit" class="btn btn-solid">Send message</button>
         <p id="formMsg" style="margin-top:1rem;color:var(--accent);font-size:.95rem"></p>
       </form>
@@ -81,3 +82,4 @@
 <script src="main.js"></script>
 </body>
 </html>
+
